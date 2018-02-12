@@ -10,6 +10,7 @@
 DIR=~/workspace/dotfiles                    # dotfiles directory
 OLDDIR=/tmp/dotfiles_old             # old dotfiles backup directory
 FILES="bashrc vimrc vim"    # list of files/folders to symlink in homedir
+CONFIGDIR="awesome"
 
 ##########
 
@@ -28,4 +29,12 @@ for file in $FILES; do
     mv ~/.$file $OLDDIR
     echo "Creating symlink to $file in home directory."
     ln -s $DIR/$file ~/.$file
+done
+
+# Create Symlinks for ~/.config folder
+for folder in $CONFIGDIR; do
+  echo "Moving any existing configfolders into $OLDDIR"
+  mv ~/.config/$folder $OLDDIR
+  echo "Creating symlink to $file in home directory."
+  ln -s $DIR/config/$folder ~/.config/$folder
 done
