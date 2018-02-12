@@ -7,7 +7,7 @@
 
 ########## Variables
 
-DIR=~/workspace/dotfiles                    # dotfiles directory
+DIR=~/dotfiles                    # dotfiles directory
 OLDDIR=/tmp/dotfiles_old             # old dotfiles backup directory
 FILES="bashrc vimrc vim"    # list of files/folders to symlink in homedir
 CONFIGDIR="awesome"
@@ -17,6 +17,10 @@ CONFIGDIR="awesome"
 # create dotfiles backup
 echo "Creating $OLDDIR for backup of any existing dotfiles in ~"
 mkdir -p $OLDDIR
+echo "...done"
+
+echo "Creating .config"
+mkdir -p ~/.config
 echo "...done"
 
 # change to the dotfiles directory
