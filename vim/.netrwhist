@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/mnt/tmp/usr/share/locale/de'
+let g:netrw_dirhist_2='/home/cinux/workspace/ansible/mpd/tasks'
+let g:netrw_dirhist_3='/home/cinux/workspace/ansible/docker/meta'
+let g:netrw_dirhist_4='/home/cinux/workspace/ansible/youtubedl/tasks'
+let g:netrw_dirhist_5='/home/cinux/workspace/ansible/raspbian/defaults'
+let g:netrw_dirhist_6='/home/cinux/workspace/ansible/ansible-role-kvm/defaults'
+let g:netrw_dirhist_7='/home/cinux/.config/awesome/theme'
