@@ -25,7 +25,7 @@ echo "...done"
 
 for file in $FILES; do
     echo "Moving any existing dotfiles from ~ to $OLDDIR"
-    mv ~/.$file ~/dotfiles_old/
+    mv ~/.$file $OLDDIR
     echo "Creating symlink to $file in home directory."
     ln -s $DIR/$file ~/.$file
 done
