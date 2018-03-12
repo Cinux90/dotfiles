@@ -8,7 +8,7 @@ set tabstop=2
 " from bit
 set t_Co=256
 set number
-colorscheme desert
+colorscheme koehler
 set background=dark
 set hidden
 set history=100
