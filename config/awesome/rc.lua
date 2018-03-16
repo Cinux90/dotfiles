@@ -331,7 +331,13 @@ globalkeys = gears.table.join(
               {description = "lua execute prompt", group = "awesome"}),
     -- Menubar
     awful.key({ modkey }, "p", function() menubar.show() end,
-              {description = "show the menubar", group = "launcher"})
+              {description = "show the menubar", group = "launcher"}),
+
+    -- Custome Keybinds
+    awful.key({ modkey }, "F12", function() os.execute("bash ~/.screenlayout/laptop.sh") end,
+              {description = "change layout", group = "awesome"}),
+    awful.key({ modkey }, "F12", function() os.execute("bash ~/.screenlayout/extern.sh") end,
+              {description = "change layout", group = "awesome"})
 )
 
 clientkeys = gears.table.join(
