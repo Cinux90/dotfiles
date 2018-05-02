@@ -334,10 +334,12 @@ globalkeys = gears.table.join(
               {description = "show the menubar", group = "launcher"}),
 
     -- Custome Keybinds
-    awful.key({ modkey }, "F12", function() os.execute("bash ~/.screenlayout/laptop.sh") end,
-              {description = "change layout", group = "awesome"}),
-    awful.key({ modkey }, "F12", function() os.execute("bash ~/.screenlayout/extern.sh") end,
-              {description = "change layout", group = "awesome"})
+    --awful.key({ modkey, "Shift" }, "F12", function() awful.util.spawn("sh ~/.screenlayout/laptop.sh") end,
+    --          {description = "change layout", group = "awesome"}),
+    --awful.key({ modkey, "Shift" }, "F11", function() awful.util.spawn("sh ~/.screenlayout/extern.sh") end,
+    --          {description = "change layout", group = "awesome"})
+    awful.key({ modkey }, "d" , function() awful.util.spawn("dmenu_run") end,
+              {description = "Run dmenu", group = "launcher"})
 )
 
 clientkeys = gears.table.join(
