@@ -7,13 +7,16 @@
 
 ########## Variables
 
-DIR=~/workspace/dotfiles                    # dotfiles directory
+DIR=$1                    # dotfiles directory
 OLDDIR=~/dotfiles_old             # old dotfiles backup directory
 FILES="bashrc vimrc vim xprofile Xinitrc"    # list of files/folders to symlink in homedir
 CONFIGDIR="awesome"
 
 ##########
-
+# check if dotfiles is empty
+if [[ $DIR -eq "" ]]; then
+  $DIR=/tmp/dotfiles
+fi
 # create dotfiles backup
 echo "Creating $OLDDIR for backup of any existing dotfiles in ~"
 mkdir -p $OLDDIR
