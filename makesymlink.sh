@@ -15,7 +15,7 @@ CONFIGDIR="awesome"
 ##########
 # check if dotfiles is empty
 if [[ $DIR -eq "" ]]; then
-  $DIR=/tmp/dotfiles
+  DIR=/tmp/dotfiles
 fi
 # create dotfiles backup
 echo "Creating $OLDDIR for backup of any existing dotfiles in ~"
