@@ -9,7 +9,7 @@
 
 DIR=$1                    # dotfiles directory
 OLDDIR=~/dotfiles_old             # old dotfiles backup directory
-FILES="bashrc vimrc vim xprofile Xinitrc"    # list of files/folders to symlink in homedir
+FILES="bashrc bashrc_aliases vimrc vim xprofile Xinitrc"    # list of files/folders to symlink in homedir
 CONFIGDIR="awesome"
 
 ##########

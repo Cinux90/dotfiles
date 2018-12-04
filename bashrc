@@ -4,7 +4,18 @@
 
 [[ $- != *i* ]] && return
 
-alias hc='herbstclient'
+[[ -f ~/.extend.bashrc ]] && . ~/.extend.bashrc
+
+[[ -f ~/.bashrc_aliases ]] && . ~/.bashrc_aliases
+
+# Define some colors first:
+red='\e[0;31m'
+RED='\e[1;31m'
+blue='\e[0;34m'
+BLUE='\e[1;34m'
+cyan='\e[0;36m'
+CYAN='\e[1;36m'
+NC='\e[0m' # No Color
 
 colors() {
 	local fgc bgc vals seq0
@@ -33,11 +44,25 @@ colors() {
 	done
 }
 
-[[ -f ~/.extend.bashrc ]] && . ~/.extend.bashrc
+# Find a file with a pattern in name:
+function ff()
+{ find . -type f -iname '*'$*'*' -ls ; }
+# Find a file with pattern $1 in name and Execute $2 on it:
+
+function ii()   # get current host related info
+{
+  echo -e "\nYou are logged on ${RED}$HOST"
+  echo -e "\nAdditionnal information:$NC " ; uname -a
+  echo -e "\n${RED}Users logged on:$NC " ; w -h
+  echo -e "\n${RED}Current date :$NC " ; date
+  echo -e "\n${RED}Machine stats :$NC " ; uptime
+  echo -e "\n${RED}Memory stats :$NC " ; free
+  my_ip 2>&- ;
+  echo -e "\n${RED}Local IP Address :$NC" ; echo ${MY_IP:-"Not connected"}
+  echo -e "\n${RED}ISP Address :$NC" ; echo ${MY_ISP:-"Not connected"}
+  echo
+}
 
 [ -r /usr/share/bash-completion/bash_completion   ] && . /usr/share/bash-completion/bash_completion
 
-parse_git_branch() {
-     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-}
-export PS1="\u@\h \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
+export PS1="\u@\h \[\033[32m\]\w\[\033[33m\]\[\033[00m\] $ "

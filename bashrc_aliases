@@ -1,0 +1,8 @@
+alias mkdir='mkdir -p'
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+alias ..='cd ..'
+alias ls='ls --color=auto'
+alias ll='ls -l --color=auto'
+
