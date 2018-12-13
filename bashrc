@@ -65,4 +65,9 @@ function ii()   # get current host related info
 
 [ -r /usr/share/bash-completion/bash_completion   ] && . /usr/share/bash-completion/bash_completion
 
-export PS1="\u@\h \[\033[32m\]\w\[\033[33m\]\[\033[00m\] $ "
+if [ $(id -u) -eq 0 ];
+then
+  PS1='\[\e[1;31m\][\u@\h \w]\$\[\e[m\] '
+else
+  PS1='\[\e[1;33m\][\u@\h \w]\$\[\e[m\] '
+fi
