@@ -6,3 +6,4 @@ alias ..='cd ..'
 alias ls='ls --color=auto'
 alias ll='ls -l --color=auto'
 
+alias gbmr='git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d'
