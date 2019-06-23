@@ -12,6 +12,10 @@ OLDDIR=~/dotfiles_old             # old dotfiles backup directory
 FILES="bashrc bashrc_aliases extended.bashrc vimrc vim xprofile Xinitrc"    # list of files/folders to symlink in homedir
 CONFIGDIR="awesome"
 
+
+########## Dependencies
+git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
+
 ##########
 # check if dotfiles is empty
 if [[ $DIR -eq "" ]]; then
